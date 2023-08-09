@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Допоможіть нашому герою на передовій - Разом змінимо життя</title>
+    <style>
+        /* Ваші стилі CSS тут */
+
+        .countdown-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .countdown-clock {
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Допоможіть нашому герою на передовій - Разом змінимо життя</h1>
+        <p>Спільно, ми можемо створити справжнє диво. Ми запускаємо фондову кампанію на Facebook з метою зібрати 62900 грн. Ці кошти підуть на придбання AGM RATTLER TS25-256 - ТЕПЛОВОГО ПРИЦІЛУ. Кожна гривня, що ви вкладете, буде важливим кроком на шляху до допомоги Юрі в його місії.</p>
+        <div class="requisites">
+            <p>Реквізити:</p>
+            <p>Приват Банк</p>
+            <p>Jurii Krechun</p>
+            <p>5168 7574 2359 0274</p>
+            <p>12/24</p>
+            <p>тел. +380962746992</p>
+        </div>
+
+        <!-- Таймер -->
+        <div class="countdown-container">
+            <p class="countdown-clock" id="countdown"></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript для таймера
+        const targetDate = new Date("2023-08-20T00:00:00"); // Задайте дату завершення кампанії
+        const countdownElement = document.getElementById("countdown");
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = targetDate - now;
+
+            if (timeLeft <= 0) {
+                countdownElement.innerHTML = "Кампанія завершена!";
+            } else {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `${days} днів ${hours} годин ${minutes} хвилин ${seconds} секунд`;
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
